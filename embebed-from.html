@@ -32,7 +32,8 @@
 
                 const campoFecha = $form.querySelector('input[id="class_date-fc3d30cd-e2f8-4d35-a4dc-9ae60d4dc4cc"]');
 
-                if (campoFecha.length) {
+                if (campoFecha) {
+                    console.log("Campo encontrado:", campoFecha);
                     // Inyectar fecha
                     campoFecha.val(params.get("class_date"));
 
@@ -49,7 +50,8 @@
 
                 const campoClase = $form.querySelector('input[id="class_date___region-fc3d30cd-e2f8-4d35-a4dc-9ae60d4dc4cc"]');
 
-                if (campoClase.length) {
+                if (campoClase) {
+                    console.log("Campo encontrado:", campoClase);
                     // Inyectar fecha
                     campoClase.val(params.get("class_date___region"));
 
