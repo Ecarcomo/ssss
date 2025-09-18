@@ -25,12 +25,12 @@
     <script>
 
         setTimeout(() => {
-            const element = frameElement.contentDocument.getElementsByName('class_date')[0];
+            const element = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date')[0]
             element.readOnly = true;
             element.style.backgroundColor="#f6fa78";
         }, 1000);
         setTimeout(() => {
-            const element = frameElement.contentDocument.getElementsByName('class_date___region')[0];
+            const element = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date___region')[0];
             element.readOnly = true;
             element.style.backgroundColor="#f6fa78";
         }, 1000);
