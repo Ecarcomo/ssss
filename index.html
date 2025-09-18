@@ -65,13 +65,16 @@
 
   <script>
     function abrirFormulario(curso, fecha) {
-      // URL de tu formulario HubSpot (ejemplo, cámbiala por la tuya real)
+      // URL formulario HubSpot 
       const baseUrl = "./embebed-from.html";
       
-      // Construimos la URL con parámetros
-      const url = `${baseUrl}?curso=${encodeURIComponent(curso)}&start_date=${encodeURIComponent(fecha)}`;
+      fecha = fecha.split('/').reverse().join('-'); // Formato YYYY-MM-DD
+
+
+      // URL con parámetros
+      const url = `${baseUrl}?class_date___region=${encodeURIComponent(curso)}&class_date=${encodeURIComponent(fecha)}`;
       
-      // Inyectamos en el iframe
+      // Inyecta en el iframe
       document.getElementById("hubspotForm").src = url;
     }
   </script>
