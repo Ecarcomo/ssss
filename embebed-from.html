@@ -31,7 +31,7 @@
                 console.log("El form ya está listo:", $form);
 
                 // Ejemplo: detectar campo específico
-                const campoFecha = $form.find('input[name="class_date"]');
+                const campoFecha = $form.querySelector('input[name="class_date"]');
 
                     if (campoFecha.length) {
                         // Inyectar fecha
@@ -74,3 +74,4 @@
     </script>
 </body>
 </html>
+
