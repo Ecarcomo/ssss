@@ -31,8 +31,14 @@
             dateInput.readOnly = true;
             dateBG.style.backgroundColor="#f6fa78";
             datePicker.remove();
+
+             // Evitar que borren con teclado
+            dateInput.addEventListener("keydown", (e) => {
+                e.preventDefault();
+            });
+
         }, 1000);
-        
+
         setTimeout(() => {
             const element = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date___region')[0];
             element.readOnly = true;
