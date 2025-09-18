@@ -13,18 +13,47 @@
     <!-- Script de HubSpot -->
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
-        hbspt.forms.create({
+        /*hbspt.forms.create({
         portalId: "23615684",
         formId: "fc3d30cd-e2f8-4d35-a4dc-9ae60d4dc4cc",
         region: "na1",
         target: "#hubspotForm" 
+        });*/
+
+        const params = new URLSearchParams(window.location.search);
+    
+        hbspt.forms.create({
+            portalId: "23615684",
+            formId: "fc3d30cd-e2f8-4d35-a4dc-9ae60d4dc4cc",
+            region: "na1",
+            target: "#hubspotForm",
+            onFormReady: function($form) {
+                console.log("El form ya está listo:", $form);
+
+                // Ejemplo: detectar campo específico
+                const campoFecha = $form.find('input[name="class_date"]');
+
+                    if (campoFecha.length) {
+                        // Inyectar fecha
+                        campoFecha.val(params.get("class_date"));
+
+                        // Bloquear edición
+                        campoFecha.prop("readonly", true);
+                        campoFecha.css("background-color", "#f6fa78");
+
+                        // Evitar borrado con teclado
+                        campoFecha.on("keydown", (e) => e.preventDefault());
+                        campoFecha.on("mousedown", (e) => e.preventDefault());
+                    }
+            }
         });
+
     </script>
 
     <!-- Script de Inyeccion -->
     <script>
 
-        setTimeout(() => {
+        /*setTimeout(() => {
             const dateBG = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByClassName('hs-dateinput')[0].firstChild;
             const datePicker = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByClassName('hs-dateinput')[0].childNodes[2];
             dateBG.readOnly = true;
@@ -37,7 +66,10 @@
             const element = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date___region')[0];
             element.readOnly = true;
             element.style.backgroundColor="#f6fa78";
-        }, 1000);
+        }, 1000);*/
+
+
+
 
     </script>
 </body>
