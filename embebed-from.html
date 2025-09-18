@@ -30,13 +30,8 @@
             const datePicker = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByClassName('hs-dateinput')[0].childNodes[2];
             dateInput.readOnly = true;
             dateBG.style.backgroundColor="#f6fa78";
+            dateBG.disabled = true;
             datePicker.remove();
-
-             // Evitar que borren con teclado
-            dateBG.addEventListener("keydown", (e) => {
-                e.preventDefault();
-            });
-
         }, 1000);
 
         setTimeout(() => {
