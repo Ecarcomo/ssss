@@ -35,35 +35,33 @@
                 if (campoFecha) {
                     console.log("Campo encontrado:", campoFecha);
                     // Inyectar fecha
-                    campoFecha.val(params.get("class_date"));
+                    campoFecha.value= params.get("class_date");
 
                     // Bloquear edición
-                    campoFecha.prop("readonly", true);
-                    campoFecha.prop("disable", true);
-                    campoFecha.css("background-color", "#f6fa78");
+                    campoFecha.readonly= true;
+                    campoFecha.disable = true;
+                    campoFecha.style.backgroundColor ="#f6fa78";
 
 
                     // Evitar borrado con teclado
-                    campoFecha.on("keydown", (e) => e.preventDefault());
-                    campoFecha.on("mousedown", (e) => e.preventDefault());
+                    campoFecha.addEventListener("keydown", (e) => e.preventDefault());
+                    campoFecha.addEventListener("mousedown", (e) => e.preventDefault());
                 }
 
                 const campoClase = $form.querySelector('input[id="class_date___region-fc3d30cd-e2f8-4d35-a4dc-9ae60d4dc4cc"]');
 
                 if (campoClase) {
                     console.log("Campo encontrado:", campoClase);
-                    // Inyectar fecha
-                    campoClase.val(params.get("class_date___region"));
+                    // Inyectar Clase
+                    campoClase.value= params.get("class_date___region");
 
                     // Bloquear edición
-                    campoClase.prop("readonly", true);
-                    campoClase.prop("disable", true);
-                    campoClase.css("background-color", "#f6fa78");
-
+                    campoClase.readonly= true;
+                    campoClase.style.backgroundColor ="#f6fa78";
 
                     // Evitar borrado con teclado
-                    campoClase.on("keydown", (e) => e.preventDefault());
-                    campoClase.on("mousedown", (e) => e.preventDefault());
+                    campoClase.addEventListener("keydown", (e) => e.preventDefault());
+                    campoClase.addEventListener("mousedown", (e) => e.preventDefault());
                 }
             }
         });
