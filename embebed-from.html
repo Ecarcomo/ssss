@@ -25,9 +25,10 @@
     <script>
 
         setTimeout(() => {
-            const element = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date')[0]
-            element.readOnly = true;
-            element.style.backgroundColor="#f6fa78";
+            const dateInput = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date')[0];
+            const dateBG = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByClassName('hs-dateinput')[0].firstChild;
+            dateInput.readOnly = true;
+            dateBG.style.backgroundColor="#f6fa78";
         }, 1000);
         setTimeout(() => {
             const element = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByName('class_date___region')[0];
